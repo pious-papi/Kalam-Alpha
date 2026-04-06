@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Amiri:wght@400;700&family=Outfit:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-islamic-green: #00904a;
+  --color-islamic-gold: #c5a059;
+  --color-islamic-cream: #fdfaf5;
+  
+  --color-dark-bg: #0f172a;
+  --color-dark-card: #1e293b;
+  --color-dark-border: #334155;
+}
+
+@layer base {
+  body {
+    @apply bg-islamic-cream text-slate-900 font-sans transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-dark-bg text-slate-100;
+  }
+}
+
+.arabic-text {
+  font-family: var(--font-arabic);
+  direction: rtl;
+}
+
+.markdown-body h1 { @apply text-2xl font-bold mb-4; }
+.markdown-body h2 { @apply text-xl font-semibold mb-3 mt-6; }
+.markdown-body p { @apply mb-4 leading-relaxed; }
+.markdown-body ul { @apply list-disc pl-6 mb-4; }
+.markdown-body li { @apply mb-2; }
+.markdown-body blockquote { @apply border-l-4 border-islamic-green pl-4 italic my-4; }
+
+.dark .markdown-body {
+  @apply text-slate-300;
+}
